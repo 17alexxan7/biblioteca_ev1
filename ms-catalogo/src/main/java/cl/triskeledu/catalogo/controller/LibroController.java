@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import cl.triskeledu.catalogo.dto.LibroRequest;
@@ -129,6 +130,26 @@ public class LibroController {
             @PathVariable String isbn) {
         // findByIsbn también devuelve un libro único: merece sus links de navegación
         return ResponseEntity.ok(addLinks(libroService.findByIsbn(isbn)));
+    }
+
+    @Operation(summary = "Buscar libros por título", description = "Retorna los libros cuyo título contiene el texto indicado (búsqueda parcial, sin distinguir mayúsculas)")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Búsqueda realizada exitosamente",
+            content = @Content(array = @ArraySchema(schema = @Schema(implementation = LibroResponse.class))))
+    })
+    @GetMapping("/buscar")
+    public ResponseEntity<CollectionModel<LibroResponse>> buscarPorTitulo(
+            @Parameter(description = "Texto a buscar en el título", required = true, example = "quijote")
+            @RequestParam String titulo) {
+        List<LibroResponse> libros = libroService.buscarPorTitulo(titulo);
+        libros.forEach(this::addLinks);
+
+        CollectionModel<LibroResponse> collection = CollectionModel.of(
+                libros,
+                linkTo(methodOn(LibroController.class).buscarPorTitulo(titulo)).withSelfRel()
+        );
+
+        return ResponseEntity.ok(collection);
     }
 
     @Operation(summary = "Crear un nuevo libro", description = "Registra un nuevo libro en el catálogo")
