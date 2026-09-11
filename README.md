@@ -92,3 +92,9 @@ Tras el merge del hotfix a `main`, se sincronizó `develop` mediante `git merge 
 ## Declaración de uso de IA
 
 Este trabajo utilizó asistencia de IA (Claude, Anthropic) como apoyo para: estructurar el flujo de ramas GitFlow, redactar la documentación técnica de este README, y resolver dudas puntuales de comandos Git durante la implementación. Las decisiones de diseño, la reflexión individual y la justificación técnica final fueron revisadas y adaptadas por el autor.
+
+
+## Nota sobre CI
+
+El workflow de GitHub Actions ejecuta únicamente la compilación del proyecto (`mvn compile`). Los tests de integración no se incluyen en el pipeline porque requieren una instancia de MySQL configurada, que no está disponible en el runner de GitHub Actions. Para ejecutar los tests, se debe contar con MySQL local configurado según las credenciales de `application.properties`.
+
