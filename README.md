@@ -85,9 +85,6 @@ Ejemplos usados en este repositorio:
 
 Tras el merge del hotfix a `main`, se sincronizó `develop` mediante `git merge main` para incorporar la corrección al flujo de desarrollo en curso.
 
-## Cómo ejecutar el proyecto
-
-*(Completar con los pasos de levantamiento de servicios según tu guía original: Eureka → api-gateway → microservicios, requisitos de MySQL, variables de entorno, etc.)*
 
 ## Declaración de uso de IA
 
