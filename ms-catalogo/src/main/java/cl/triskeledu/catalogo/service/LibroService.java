@@ -75,7 +75,10 @@ public class LibroService {
     }
 
     public boolean existsByIsbn(String isbn) {
-        return libroRepository.existsByIsbn(isbn);
+    if (isbn == null || isbn.isBlank()) {
+        throw new IllegalArgumentException("El ISBN no puede estar vacío");
+    }
+    return libroRepository.existsByIsbn(isbn.trim());
     }
 
     @Transactional
