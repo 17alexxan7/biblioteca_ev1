@@ -122,4 +122,8 @@ public class LibroService {
     return libroMapper.toResponseList(libroRepository.findByTituloContainingIgnoreCase(titulo));
     }
 
+    public List<LibroResponse> findByCategoria(Long categoriaId) {
+    return libroMapper.toResponseList(libroRepository.findByCategorias_Id(categoriaId));
+    }
+
 }

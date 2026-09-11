@@ -152,6 +152,26 @@ public class LibroController {
         return ResponseEntity.ok(collection);
     }
 
+    @Operation(summary = "Listar libros por categoría", description = "Retorna los libros asociados a una categoría específica")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Listado obtenido exitosamente",
+            content = @Content(array = @ArraySchema(schema = @Schema(implementation = LibroResponse.class))))
+    })
+    @GetMapping("/categoria/{categoriaId}")
+    public ResponseEntity<CollectionModel<LibroResponse>> findByCategoria(
+            @Parameter(description = "ID de la categoría", required = true, example = "2")
+            @PathVariable Long categoriaId) {
+        List<LibroResponse> libros = libroService.findByCategoria(categoriaId);
+        libros.forEach(this::addLinks);
+
+        CollectionModel<LibroResponse> collection = CollectionModel.of(
+                libros,
+                linkTo(methodOn(LibroController.class).findByCategoria(categoriaId)).withSelfRel()
+        );
+
+        return ResponseEntity.ok(collection);
+    }
+
     @Operation(summary = "Crear un nuevo libro", description = "Registra un nuevo libro en el catálogo")
     @ApiResponses({
         @ApiResponse(responseCode = "201", description = "Libro creado exitosamente",
