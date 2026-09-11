@@ -118,4 +118,8 @@ public class LibroService {
         );
     }
 
+    public List<LibroResponse> buscarPorTitulo(String titulo) {
+    return libroMapper.toResponseList(libroRepository.findByTituloContainingIgnoreCase(titulo));
+    }
+
 }
