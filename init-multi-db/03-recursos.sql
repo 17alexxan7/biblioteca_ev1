@@ -28,7 +28,7 @@ CREATE TABLE usuarios_proyeccion (
 
 -- TABLAS DEL MICROSERVICIO
 CREATE TABLE recursos_fisicos (
-    id                 INT          AUTO_INCREMENT PRIMARY KEY,
+    id                 BIGINT          AUTO_INCREMENT PRIMARY KEY,
     sku                VARCHAR(50)  UNIQUE NOT NULL,
     tipo_recurso       VARCHAR(50)  NOT NULL CHECK (tipo_recurso IN ('Libro','Notebook','Tablet','Juego de mesa')),
     isbn               VARCHAR(20),
@@ -39,9 +39,9 @@ CREATE TABLE recursos_fisicos (
 ) ENGINE=InnoDB;
 
 CREATE TABLE historial_eventos_recursos_fisicos (
-    id                 INT          AUTO_INCREMENT PRIMARY KEY,
+    id                 BIGINT          AUTO_INCREMENT PRIMARY KEY,
     usuario_email      VARCHAR(150) NOT NULL,
-    recurso_id         INT          NOT NULL,
+    recurso_id         BIGINT          NOT NULL,
     fecha_evento       DATE         NOT NULL,
     estado             VARCHAR(50)  NOT NULL CHECK (estado IN ('Creado','Reservado','Prestado','Devuelto a tiempo','Devuelto con atraso','Perdido')),
     CONSTRAINT fk_historial_usuario FOREIGN KEY (usuario_email) REFERENCES usuarios_proyeccion(email),
@@ -49,8 +49,8 @@ CREATE TABLE historial_eventos_recursos_fisicos (
 ) ENGINE=InnoDB;
 
 CREATE TABLE mantenimiento_recursos (
-    id                 INT          AUTO_INCREMENT PRIMARY KEY,
-    recurso_id         INT          NOT NULL,
+    id                 BIGINT          AUTO_INCREMENT PRIMARY KEY,
+    recurso_id         BIGINT          NOT NULL,
     fecha_inicio       DATE         NOT NULL,
     estado             VARCHAR(40)  NOT NULL CHECK (estado IN ('Abierto','Cerrado','Cancelado')),
     observacion        VARCHAR(200),
