@@ -127,6 +127,14 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Generador de datos aleatorios para pruebas unitarias -->
+        <dependency>
+            <groupId>net.datafaker</groupId>
+            <artifactId>datafaker</artifactId>
+            <version>2.2.2</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- Cliente Eureka: registro y descubrimiento de este microservicio -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
