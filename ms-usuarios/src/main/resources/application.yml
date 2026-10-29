@@ -27,10 +27,9 @@ spring:
 # Esta clave secreta DEBE ser idéntica en todos los microservicios
 # para que los tokens generados por ms-usuarios sean válidos en
 # ms-catalogo y ms-recursos.
-# Para dar el valor al "secret" trasformaremos la frase clave (inventada) 
-# "tokenSecretKeyBiblioteca2026TriskeleduSecurity" a formato Base64
+# El valor se inyecta por variable de entorno JWT_SECRET (ver .env.example)
 jwt:
-  secret: "dG9rZW5TZWNyZXRLZXlCaWJsaW90ZWNhMjAyNlRyaXNrZWxlZHVTZWN1cml0eQ=="
+  secret: ${JWT_SECRET}
   expiration-ms: 3600000   # 1 hora en milisegundos
 # [JJWT-FIN]
 

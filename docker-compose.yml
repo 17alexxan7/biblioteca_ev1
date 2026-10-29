@@ -1,0 +1,130 @@
+x-ms-common: &ms-common
+  restart: unless-stopped
+  depends_on:
+    mysql:
+      condition: service_healthy
+    eureka-server:
+      condition: service_healthy
+
+x-healthcheck: &hc
+  interval: 15s
+  timeout: 5s
+  retries: 10
+  start_period: 60s
+
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: biblioteca-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init-multi-db:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+
+  eureka-server:
+    build:
+      context: .
+      args:
+        MODULE: eureka
+    image: biblioteca-eureka
+    container_name: biblioteca-eureka
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    ports:
+      - "8761:8761"
+    healthcheck:
+      <<: *hc
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8761/actuator/health || exit 1"]
+
+  ms-usuarios:
+    <<: *ms-common
+    build:
+      context: .
+      args:
+        MODULE: ms-usuarios
+    image: biblioteca-ms-usuarios
+    container_name: biblioteca-ms-usuarios
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_URL: jdbc:mysql://mysql:3306/usuarios?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      DB_USERNAME: root
+      DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      EUREKA_URL: http://eureka-server:8761/eureka
+      JWT_SECRET: ${JWT_SECRET}
+    healthcheck:
+      <<: *hc
+      test: ["CMD-SHELL", "wget -qO- http://localhost:9001/actuator/health || exit 1"]
+
+  ms-catalogo:
+    <<: *ms-common
+    build:
+      context: .
+      args:
+        MODULE: ms-catalogo
+    image: biblioteca-ms-catalogo
+    container_name: biblioteca-ms-catalogo
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_URL: jdbc:mysql://mysql:3306/catalogo?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      DB_USERNAME: root
+      DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      EUREKA_URL: http://eureka-server:8761/eureka
+      JWT_SECRET: ${JWT_SECRET}
+    healthcheck:
+      <<: *hc
+      test: ["CMD-SHELL", "wget -qO- http://localhost:9002/actuator/health || exit 1"]
+
+  ms-recursos:
+    <<: *ms-common
+    build:
+      context: .
+      args:
+        MODULE: ms-recursos
+    image: biblioteca-ms-recursos
+    container_name: biblioteca-ms-recursos
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_URL: jdbc:mysql://mysql:3306/recursos?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      DB_USERNAME: root
+      DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      EUREKA_URL: http://eureka-server:8761/eureka
+      JWT_SECRET: ${JWT_SECRET}
+    healthcheck:
+      <<: *hc
+      test: ["CMD-SHELL", "wget -qO- http://localhost:9003/actuator/health || exit 1"]
+
+  api-gateway:
+    build:
+      context: .
+      args:
+        MODULE: api-gateway
+    image: biblioteca-api-gateway
+    container_name: biblioteca-api-gateway
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      EUREKA_URL: http://eureka-server:8761/eureka
+    depends_on:
+      ms-usuarios:
+        condition: service_healthy
+      ms-catalogo:
+        condition: service_healthy
+      ms-recursos:
+        condition: service_healthy
+    ports:
+      - "9000:9000"
+    healthcheck:
+      <<: *hc
+      test: ["CMD-SHELL", "wget -qO- http://localhost:9000/actuator/health || exit 1"]
+
+volumes:
+  mysql_data:

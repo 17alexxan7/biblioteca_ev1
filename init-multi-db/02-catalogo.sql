@@ -13,12 +13,12 @@ DROP TABLE IF EXISTS categorias;
 
 -- 2. TABLAS MAESTRAS
 CREATE TABLE categorias (
-    id                INT          AUTO_INCREMENT PRIMARY KEY,
+    id                BIGINT          AUTO_INCREMENT PRIMARY KEY,
     nombre            VARCHAR(100) UNIQUE NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE libros (
-    id                INT          AUTO_INCREMENT PRIMARY KEY,
+    id                BIGINT          AUTO_INCREMENT PRIMARY KEY,
     isbn              VARCHAR(20)  UNIQUE NOT NULL,
     titulo            VARCHAR(255) NOT NULL,
     editorial         VARCHAR(100) NOT NULL,
@@ -27,9 +27,9 @@ CREATE TABLE libros (
 ) ENGINE=InnoDB;
 
 CREATE TABLE libro_categoria (
-    id                INT          AUTO_INCREMENT PRIMARY KEY,
-    libro_id          INT          NOT NULL,
-    categoria_id      INT          NOT NULL,
+    id                BIGINT          AUTO_INCREMENT PRIMARY KEY,
+    libro_id          BIGINT          NOT NULL,
+    categoria_id      BIGINT          NOT NULL,
     UNIQUE (libro_id, categoria_id),
     CONSTRAINT fk_libro_categoria_libro FOREIGN KEY (libro_id) REFERENCES libros(id) ON DELETE CASCADE,
     CONSTRAINT fk_libro_categoria_categoria FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE RESTRICT
