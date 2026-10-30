@@ -60,6 +60,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Instalar módulos en el repo local (Snyk necesita resolver common)
+        run: ./mvnw -B -q install -DskipTests
+
       - name: Instalar Snyk CLI
         run: npm install -g snyk
 
