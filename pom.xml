@@ -67,7 +67,7 @@
         <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version> <!-- [TEST] -->
         <cl-triskeledu-common.version>0.0.1-SNAPSHOT</cl-triskeledu-common.version>
         <spring-boot-actuator.version>3.5.14</spring-boot-actuator.version>
-        <jjwt.version>0.12.6</jjwt.version> <!-- [JJWT] -->
+        <jjwt.version>0.13.0</jjwt.version> <!-- [JJWT] -->
         <springdoc-openapi.version>2.8.17</springdoc-openapi.version> <!-- [SWAGGER] -->
         <spring-boot-hateoas.version>3.5.14</spring-boot-hateoas.version> <!-- [HATEOAS] -->
     </properties>
