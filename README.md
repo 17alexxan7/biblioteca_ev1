@@ -95,3 +95,26 @@ Este trabajo utilizó asistencia de IA (Claude, Anthropic) como apoyo para: estr
 
 El workflow de GitHub Actions ejecuta únicamente la compilación del proyecto (`mvn compile`). Los tests de integración no se incluyen en el pipeline porque requieren una instancia de MySQL configurada, que no está disponible en el runner de GitHub Actions. Para ejecutar los tests, se debe contar con MySQL local configurado según las credenciales de `application.properties`.
 
+
+## Pipeline CI/CD (GitHub Actions)
+
+Workflow `.github/workflows/ci.yml`, se ejecuta en push y PR a develop y main (y manualmente). Cuatro jobs encadenados, cada uno depende del anterior:
+
+1. **Tests unitarios**: `./mvnw -B clean test`. Sube los reportes de surefire como artefacto.
+2. **Análisis de seguridad (Snyk)**: `snyk test --all-projects` sobre los 7 módulos, con umbral `high`. Si hay hallazgos High/Critical no cubiertos por la política, el job falla y **bloquea** los jobs siguientes (docker y deploy). Sube `snyk-report.json` como artefacto.
+3. **Build imagen Docker**: matriz de 5 módulos (eureka, ms-usuarios, ms-catalogo, ms-recursos, api-gateway), sin push.
+4. **Deploy simulado**: solo en push; levanta todo con Docker Compose (`--wait`) y ejecuta un smoke test a `http://localhost:9000/actuator/health`.
+
+### Trazabilidad
+GitFlow (main, develop, feature/*). Cada paso del proyecto va en una rama feature con commits descriptivos y un Pull Request hacia develop. Dependabot (`.github/dependabot.yml`) revisa semanalmente dependencias Maven, GitHub Actions e imagen Docker, y abre PR contra develop.
+
+### Calidad y seguridad
+- Tests unitarios con Mockito y DataFaker en ms-usuarios y ms-recursos.
+- Snyk detectó 338 hallazgos High/Critical (33 paquetes distintos) en dependencias transitivas de Spring Boot 3.5.15 y Spring Cloud 4.3.0, sin parche dentro de la línea 3.5 (los arreglos exigen migrar a Boot 4 / Cloud 5). Se aceptaron como **riesgo documentado** en el archivo `.snyk`, con justificación y vencimiento 2027-01-31. El bloqueo sigue activo: cualquier hallazgo nuevo rompe el pipeline.
+- Lección: los PR #10, #12 y #13 se mergearon sin esperar los checks; desde el PR #14 se mergea solo con checks en verde.
+- El secreto JWT antiguo sigue en el historial de Git: se declara como secreto rotado, no borrado.
+
+### Herramientas de IA utilizadas
+Se utilizó Claude (Anthropic) como asistente de apoyo durante el proyecto: para orientar el orden de los pasos, proponer borradores de configuración y código (Dockerfile, Compose, tests, workflow de GitHub Actions, `dependabot.yml`) y ayudar a interpretar errores y reportes (por ejemplo, el reporte de Snyk).
+
+El equipo ejecutó cada comando en su entorno, revisó los resultados, decidió qué cambios aplicar (por ejemplo, el tratamiento de los hallazgos de Snyk como riesgo aceptado), validó los checks en GitHub Actions y gestionó los commits y Pull Requests. Las conclusiones y reflexiones individuales fueron redactadas sin IA.

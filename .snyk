@@ -1,0 +1,294 @@
+version: v1.25.0
+ignore:
+  SNYK-JAVA-CHQOSLOGBACK-17675439:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-COMFASTERXMLJACKSONCORE-17972608:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-COMFASTERXMLJACKSONCORE-19778370:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-COMFASTERXMLJACKSONCORE-20059179:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-COMFASTERXMLJACKSONCORE-20059683:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-COMFASTERXMLJACKSONCORE-21193287:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-COMFASTERXMLJACKSONCORE-21761837:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-COMGOOGLEGUAVA-20825054:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-COMGOOGLEPROTOBUF-8055227:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-COMMONSFILEUPLOAD-10363252:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-COMMONSLANG-10734077:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-8352924:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IOMICROMETER-19233327:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IOMICROMETER-19256585:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IONETTY-18170202:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IONETTY-18170204:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IONETTY-18170213:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IONETTY-18230935:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IONETTY-18233079:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IONETTY-18956131:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IONETTY-19005879:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IONETTY-19233599:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IONETTY-20074868:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IOPROJECTREACTOR-19267101:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IOPROJECTREACTOR-19267102:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-IOPROJECTREACTORNETTY-19267394:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHECOMMONS-10734078:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHEHTTPCOMPONENTSCLIENT5-19432178:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHEHTTPCOMPONENTSCORE5-17817217:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHEHTTPCOMPONENTSCORE5-17817218:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHETOMCATEMBED-17732890:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHETOMCATEMBED-17733746:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHETOMCATEMBED-20302843:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHETOMCATEMBED-20302889:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHETOMCATEMBED-20304748:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHETOMCATEMBED-20552494:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHETOMCATEMBED-21246252:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHETOMCATEMBED-21249759:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHETOMCATEMBED-21707475:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHETOMCATEMBED-21707477:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHETOMCATEMBED-21715436:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGAPACHETOMCATEMBED-21716509:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-16074612:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-16075266:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-18512520:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-18512572:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-18512779:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-18512810:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-18518014:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-18518039:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-18518087:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-18519010:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-18519127:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-18519148:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-18519163:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-18519180:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-18519194:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGBOUNCYCASTLE-20419436:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGGLASSFISHJAXB-20883142:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORK-19267072:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORK-19267073:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORK-19267075:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORK-19267077:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORK-19267078:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORK-19267079:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORK-19267098:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORK-19267438:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORKCLOUD-12591534:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORKCLOUD-13561992:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORKCLOUD-19267459:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORKCLOUD-19268251:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORKSECURITY-19267391:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z
+  SNYK-JAVA-ORGSPRINGFRAMEWORKSECURITY-19267441:
+    - '*':
+        reason: 'Dependencia transitiva de Spring Boot 3.5.15 / Spring Cloud 4.3.0; sin parche en la linea 3.5. Riesgo aceptado, ver README.'
+        expires: 2027-01-31T00:00:00.000Z

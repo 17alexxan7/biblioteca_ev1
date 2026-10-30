@@ -13,7 +13,7 @@ DROP TABLE IF EXISTS usuarios;
 
 -- 2. TABLAS MAESTRAS
 CREATE TABLE usuarios (
-    id                INT          AUTO_INCREMENT PRIMARY KEY,
+    id                BIGINT          AUTO_INCREMENT PRIMARY KEY,
     nombre            VARCHAR(150) NOT NULL,
     apellido          VARCHAR(150) NOT NULL,
     email             VARCHAR(150) UNIQUE NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE usuarios (
 ) ENGINE=InnoDB;
 
 CREATE TABLE perfil_usuarios (
-    id                INT          AUTO_INCREMENT PRIMARY KEY,
+    id                BIGINT          AUTO_INCREMENT PRIMARY KEY,
     usuario_email     VARCHAR(150) UNIQUE NOT NULL,
     telefono          VARCHAR(30),
     direccion         VARCHAR(180),
@@ -33,7 +33,7 @@ CREATE TABLE perfil_usuarios (
 ) ENGINE=InnoDB;
 
 CREATE TABLE credenciales_usuarios (
-    id                INT          AUTO_INCREMENT PRIMARY KEY,
+    id                BIGINT          AUTO_INCREMENT PRIMARY KEY,
     usuario_email     VARCHAR(150) UNIQUE NOT NULL,
     ultimo_acceso     TIMESTAMP    NULL,
     bloqueado         BOOLEAN      NOT NULL DEFAULT FALSE,
