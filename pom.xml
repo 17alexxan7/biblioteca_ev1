@@ -57,7 +57,7 @@
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
         <mysql-connector-j.version>8.4.0</mysql-connector-j.version>
-        <com-h2database.version>2.3.232</com-h2database.version>
+        <com-h2database.version>2.5.252</com-h2database.version>
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
         <jakarta.el.version>4.0.2</jakarta.el.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
