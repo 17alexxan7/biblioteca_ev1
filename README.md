@@ -1,6 +1,6 @@
 # Biblioteca-Springboot — Sistema de Microservicios
 
-Sistema de biblioteca basado en microservicios con Spring Boot, desarrollado como parte de la evaluación de Arquitectura de Software (EV1 DevOps). Este documento describe la estrategia de control de versiones y flujo de trabajo colaborativo utilizada sobre el microservicio `ms-catalogo`.
+Sistema de biblioteca basado en microservicios con Spring Boot, desarrollado para la evaluación EVA2 de Ingeniería DevOps (DOY0101, DuocUC). Este repositorio documenta la estrategia de ramas GitFlow, el pipeline CI/CD con GitHub Actions (tests, Snyk, imágenes Docker y deploy simulado con Docker Compose), la gestión de dependencias con Dependabot y el uso de IA en el proyecto.
 
 ## Estructura del proyecto
 
@@ -9,11 +9,11 @@ Monorepo Maven con los siguientes módulos:
 - `api-gateway` — punto de entrada único al sistema
 - `eureka` — servidor de descubrimiento de servicios
 - `common` — clases y utilidades compartidas entre microservicios
-- `ms-catalogo` — gestión de libros y categorías (**módulo foco de esta evaluación**)
+- `ms-catalogo` — gestión de libros y categorías 
 - `ms-recursos` — gestión de recursos bibliográficos
 - `ms-usuarios` — gestión de usuarios
 
-`ms-catalogo`, `ms-usuarios` y `ms-recursos` dependen de `common`, por lo que el monorepo se mantiene completo para no romper el build, aunque el trabajo de ramas/commits de esta evaluación se concentró en `ms-catalogo`.
+Los módulos `ms-catalogo`, `ms-usuarios` y `ms-recursos` dependen de `common`, por lo que el monorepo se mantiene completo para que el build funcione. Los ejemplos de ramas y commits de la sección de GitFlow se trabajaron sobre `ms-catalogo`.
 
 ## Estrategia de branching: GitFlow
 
@@ -84,16 +84,6 @@ Ejemplos usados en este repositorio:
 | `hotfix/validar-busqueda-titulo-vacio` | `main` | `main` (PR #3) | `26560f7` |
 
 Tras el merge del hotfix a `main`, se sincronizó `develop` mediante `git merge main` para incorporar la corrección al flujo de desarrollo en curso.
-
-
-## Declaración de uso de IA
-
-Este trabajo utilizó asistencia de IA (Claude, Anthropic) como apoyo para: estructurar el flujo de ramas GitFlow, redactar la documentación técnica de este README, y resolver dudas puntuales de comandos Git durante la implementación. Las decisiones de diseño, la reflexión individual y la justificación técnica final fueron revisadas y adaptadas por el autor.
-
-
-## Nota sobre CI
-
-El workflow de GitHub Actions ejecuta únicamente la compilación del proyecto (`mvn compile`). Los tests de integración no se incluyen en el pipeline porque requieren una instancia de MySQL configurada, que no está disponible en el runner de GitHub Actions. Para ejecutar los tests, se debe contar con MySQL local configurado según las credenciales de `application.properties`.
 
 
 ## Pipeline CI/CD (GitHub Actions)
