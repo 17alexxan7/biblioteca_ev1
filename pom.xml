@@ -50,7 +50,7 @@
         <java.version>21</java.version>                                            <!-- Version de Java a utilizar -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>3.5.15</spring-boot.version>                        <!-- Version de Spring Boot base para microservicios -->
+        <spring-boot.version>4.1.2</spring-boot.version>                        <!-- Version de Spring Boot base para microservicios -->
         <spring-cloud.version>2025.0.0</spring-cloud.version>                                 <!-- Version de Spring Cloud -->
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <lombok.version>1.18.44</lombok.version>
