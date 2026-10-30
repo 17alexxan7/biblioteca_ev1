@@ -115,4 +115,6 @@ GitFlow (main, develop, feature/*). Cada paso del proyecto va en una rama featur
 - El secreto JWT antiguo sigue en el historial de Git: se declara como secreto rotado, no borrado.
 
 ### Herramientas de IA utilizadas
-Se usaron asistentes de IA conversacionales (Claude, de Anthropic) como apoyo para el Dockerfile y Compose, los tests unitarios, el pipeline y Snyk, y Dependabot. Las conclusiones y reflexiones individuales fueron redactadas sin IA.
+Se utilizó Claude (Anthropic) como asistente de apoyo durante el proyecto: para orientar el orden de los pasos, proponer borradores de configuración y código (Dockerfile, Compose, tests, workflow de GitHub Actions, `dependabot.yml`) y ayudar a interpretar errores y reportes (por ejemplo, el reporte de Snyk).
+
+El equipo ejecutó cada comando en su entorno, revisó los resultados, decidió qué cambios aplicar (por ejemplo, el tratamiento de los hallazgos de Snyk como riesgo aceptado), validó los checks en GitHub Actions y gestionó los commits y Pull Requests. Las conclusiones y reflexiones individuales fueron redactadas sin IA.
