@@ -69,7 +69,7 @@ jobs:
       - name: Snyk test (bloquea si hay vulnerabilidades high o critical)
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        run: snyk test --all-projects --severity-threshold=high --json-file-output=snyk-report.json
+        run: snyk test --all-projects --policy-path=.snyk --severity-threshold=high --json-file-output=snyk-report.json
 
       - name: Subir reporte de Snyk
         if: always()
